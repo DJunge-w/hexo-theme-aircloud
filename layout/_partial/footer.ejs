@@ -78,6 +78,20 @@
             <span id="busuanzi_value_site_uv"></span>UV
         </span>
         Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+    <% if (config.disqus_shortname){ %>
+<script>
+  var disqus_shortname = '<%= config.disqus_shortname %>';
+  <% if (page.permalink){ %>
+  var disqus_url = '<%= page.permalink %>';
+  <% } %>
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/<% if (page.comments){ %>embed.js<% } else { %>count.js<% } %>';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<% } %>
 </footer>
-
 
